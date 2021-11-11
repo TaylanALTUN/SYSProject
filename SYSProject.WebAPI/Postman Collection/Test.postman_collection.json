@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "a2e98611-1a26-4e84-ba5d-d5a02aee277e",
+		"name": "Çalışma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Taylan\",\r\n   \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44318/api/Auth/Login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Auth",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGF5bGFuIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwibmJmIjoxNjM2NjUyODA4LCJleHAiOjE2MzY2NTM0MDcsImlzcyI6Ind3dy5TWVNQcm9qZWN0LmNvbSIsImF1ZCI6Ind3dy5TWVNQcm9qZWN0LmNvbSJ9.gdC-o1pBlL3T0oc_HPJIld2vAIZ9gsCWXKVU11-kMR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44318/api/Products/GetAllProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Products",
+						"GetAllProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGF5bGFuIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwibmJmIjoxNjM2NjUyODA4LCJleHAiOjE2MzY2NTM0MDcsImlzcyI6Ind3dy5TWVNQcm9qZWN0LmNvbSIsImF1ZCI6Ind3dy5TWVNQcm9qZWN0LmNvbSJ9.gdC-o1pBlL3T0oc_HPJIld2vAIZ9gsCWXKVU11-kMR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44318/api/Products/GetProduct?id=12",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Products",
+						"GetProduct"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGF5bGFuIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwibmJmIjoxNjM2NjUyODA4LCJleHAiOjE2MzY2NTM0MDcsImlzcyI6Ind3dy5TWVNQcm9qZWN0LmNvbSIsImF1ZCI6Ind3dy5TWVNQcm9qZWN0LmNvbSJ9.gdC-o1pBlL3T0oc_HPJIld2vAIZ9gsCWXKVU11-kMR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Yeni ürün xx\",\r\n    \"saleUnitPrice\": 22.00,\r\n    \"buyUnitPrice\": 11.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44318/api/Products/CreateProduct",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Products",
+						"CreateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGF5bGFuIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwibmJmIjoxNjM2NjUyODA4LCJleHAiOjE2MzY2NTM0MDcsImlzcyI6Ind3dy5TWVNQcm9qZWN0LmNvbSIsImF1ZCI6Ind3dy5TWVNQcm9qZWN0LmNvbSJ9.gdC-o1pBlL3T0oc_HPJIld2vAIZ9gsCWXKVU11-kMR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 12,\r\n    \"name\": \"Yeni ürün deneme\",\r\n    \"saleUnitPrice\": 99.00,\r\n    \"buyUnitPrice\": 66.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44318/api/Products/UpdateProduct",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Products",
+						"UpdateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGF5bGFuIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwibmJmIjoxNjM2NjUyODA4LCJleHAiOjE2MzY2NTM0MDcsImlzcyI6Ind3dy5TWVNQcm9qZWN0LmNvbSIsImF1ZCI6Ind3dy5TWVNQcm9qZWN0LmNvbSJ9.gdC-o1pBlL3T0oc_HPJIld2vAIZ9gsCWXKVU11-kMR4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44318/api/Products/DeleteProduct?id=6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44318",
+					"path": [
+						"api",
+						"Products",
+						"DeleteProduct"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

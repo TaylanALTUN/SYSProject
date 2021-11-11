@@ -1,0 +1,6 @@
+﻿1- SYSProject.DataAccess / Concrete / EntityFramework / Contexts / SYSInterviewContext.cs içinde "OnConfiguring" metodundan DB ayarı gerekirse yapılır.
+2- Package Manager Console "SYSProject.DataAccess" katmanı seçilerek açılır ve "update-database" komutu çalıştırılır. Bu şekilde veri tabanı örnek datalarla oluşturulmuş olur. 
+3- WebAPI projesi başlatma projesi olarak seçilerek program çalıştırlır.
+4- SYSProject.WebAPI / Postman Collection dizinindeki json koleksiyon dosyası postman'e import edilerek endpoint testleri yapılabilir.
+5- Login yapılıp token alınır.
+6- Diğer tüm endpointler için login ile alınan jwt bearer token olarak kullanılır.
