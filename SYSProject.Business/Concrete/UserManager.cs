@@ -1,6 +1,6 @@
 ﻿using SYSProject.Business.Abstract;
 using SYSProject.Core.DataAccess;
-using SYSProject.Core.Entities.Concrete; 
+using SYSProject.Core.Entities.Concrete;
 using SYSProject.Entities.Concrete;
 
 namespace SYSProject.Business.Concrete

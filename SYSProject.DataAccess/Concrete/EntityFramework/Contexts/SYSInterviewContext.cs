@@ -12,10 +12,6 @@ namespace SYSProject.DataAccess.Concrete.EntityFramework.Contexts
 {
     public class SYSInterviewContext : DbContext
     {
-        public SYSInterviewContext()
-        {
-
-        }
         public SYSInterviewContext(DbContextOptions<SYSInterviewContext> options)
        : base(options)
         {
@@ -23,8 +19,7 @@ namespace SYSProject.DataAccess.Concrete.EntityFramework.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=SELECTTAYLAN\SQLSELECT;Database=SYSInterview;User Id=sa;Password=slc123.;");
-           /// optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; DataBase=SYSInterview;Trusted_Connection=true");
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

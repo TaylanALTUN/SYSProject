@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SYSProject.Core.Utilities.Security.Encyption
 {
-    public class SigningCredentialsHelper 
+    public class SigningCredentialsHelper
     {
         public static SigningCredentials CreateSigningCredentialsHelper(SecurityKey
         securityKey)

@@ -19,7 +19,101 @@ namespace SYSProject.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SYSProject.Core.Entities.Concrete.User", b =>
+            modelBuilder.Entity("SYSProject.Entities.Concrete.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("BuyUnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("CreatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("SaleUnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            BuyUnitPrice = 700m,
+                            CreatedBy = 1L,
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 965, DateTimeKind.Local).AddTicks(8373),
+                            IsDeleted = false,
+                            Name = "Ürün1",
+                            SaleUnitPrice = 1000m
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BuyUnitPrice = 400m,
+                            CreatedBy = 1L,
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 966, DateTimeKind.Local).AddTicks(8485),
+                            IsDeleted = false,
+                            Name = "Ürün2",
+                            SaleUnitPrice = 500m
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            BuyUnitPrice = 5000m,
+                            CreatedBy = 1L,
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 966, DateTimeKind.Local).AddTicks(8502),
+                            IsDeleted = false,
+                            Name = "Ürün3",
+                            SaleUnitPrice = 7000m
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            BuyUnitPrice = 2000m,
+                            CreatedBy = 1L,
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 966, DateTimeKind.Local).AddTicks(8505),
+                            IsDeleted = false,
+                            Name = "Ürün4",
+                            SaleUnitPrice = 2800m
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            BuyUnitPrice = 6000m,
+                            CreatedBy = 1L,
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 966, DateTimeKind.Local).AddTicks(8507),
+                            IsDeleted = false,
+                            Name = "Ürün5",
+                            SaleUnitPrice = 9000m
+                        });
+                });
+
+            modelBuilder.Entity("SYSProject.Entities.Concrete.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,7 +123,7 @@ namespace SYSProject.DataAccess.Migrations
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<long?>("DeletedBy")
@@ -74,108 +168,14 @@ namespace SYSProject.DataAccess.Migrations
                         {
                             Id = 1L,
                             CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 830, DateTimeKind.Local).AddTicks(2122),
+                            CreatedDate = new DateTime(2021, 11, 12, 8, 54, 56, 970, DateTimeKind.Local).AddTicks(1764),
                             Email = "taylanaltun@gmail.com",
                             FirstName = "Taylan",
                             IsDeleted = false,
                             LastName = "Altun",
-                            PasswordHash = new byte[] { 160, 75, 104, 157, 147, 42, 66, 37, 212, 214, 7, 46, 148, 53, 200, 24, 15, 66, 85, 5, 134, 111, 227, 172, 221, 201, 153, 192, 1, 196, 251, 190, 80, 210, 34, 51, 248, 52, 30, 225, 138, 186, 154, 15, 21, 132, 125, 80, 222, 99, 207, 23, 119, 41, 49, 8, 89, 23, 108, 188, 186, 13, 146, 138 },
-                            PasswordSalt = new byte[] { 67, 50, 197, 17, 167, 201, 177, 146, 112, 254, 181, 147, 60, 130, 4, 219, 76, 228, 177, 235, 57, 23, 19, 170, 215, 227, 77, 121, 75, 238, 8, 250, 185, 196, 116, 51, 4, 146, 146, 49, 155, 77, 212, 49, 34, 171, 76, 63, 232, 105, 110, 121, 83, 203, 22, 174, 215, 131, 168, 69, 143, 7, 105, 56, 191, 57, 116, 221, 142, 126, 36, 109, 186, 50, 178, 54, 205, 93, 235, 235, 102, 70, 100, 11, 11, 5, 119, 150, 72, 142, 30, 165, 213, 125, 201, 6, 187, 249, 241, 164, 171, 179, 43, 170, 114, 90, 193, 185, 62, 131, 110, 226, 67, 47, 41, 46, 197, 70, 136, 210, 7, 56, 42, 16, 164, 137, 202, 137 },
+                            PasswordHash = new byte[] { 245, 106, 60, 78, 197, 150, 140, 156, 186, 49, 63, 99, 155, 204, 238, 139, 10, 66, 148, 133, 229, 117, 41, 44, 99, 194, 85, 210, 16, 42, 87, 57, 170, 17, 29, 26, 6, 204, 1, 37, 150, 55, 62, 77, 64, 147, 205, 51, 179, 228, 23, 251, 197, 172, 160, 9, 139, 30, 255, 202, 113, 76, 160, 88 },
+                            PasswordSalt = new byte[] { 159, 84, 64, 156, 2, 80, 199, 86, 207, 206, 251, 169, 217, 36, 125, 13, 132, 199, 144, 11, 53, 182, 170, 32, 50, 161, 45, 224, 110, 245, 187, 43, 142, 215, 140, 81, 28, 248, 178, 40, 20, 160, 35, 161, 138, 224, 43, 19, 113, 128, 124, 120, 32, 212, 173, 3, 30, 211, 104, 210, 89, 84, 201, 12, 4, 43, 183, 97, 208, 245, 234, 167, 249, 239, 192, 84, 47, 243, 33, 124, 181, 193, 205, 221, 2, 201, 172, 44, 23, 236, 136, 87, 168, 117, 44, 198, 178, 77, 227, 74, 144, 175, 63, 116, 56, 210, 191, 165, 69, 142, 164, 155, 75, 245, 136, 40, 112, 92, 43, 193, 116, 156, 223, 187, 97, 42, 41, 204 },
                             UserName = "Taylan"
-                        });
-                });
-
-            modelBuilder.Entity("SYSProject.Entities.Concrete.Product", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("BuyUnitPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<long>("CreatedBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("DeletedBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("SaleUnitPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<long?>("UpdatedBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            BuyUnitPrice = 700m,
-                            CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 825, DateTimeKind.Local).AddTicks(7346),
-                            IsDeleted = false,
-                            Name = "Ürün1",
-                            SaleUnitPrice = 1000m
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            BuyUnitPrice = 400m,
-                            CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 826, DateTimeKind.Local).AddTicks(7411),
-                            IsDeleted = false,
-                            Name = "Ürün2",
-                            SaleUnitPrice = 500m
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            BuyUnitPrice = 5000m,
-                            CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 826, DateTimeKind.Local).AddTicks(7427),
-                            IsDeleted = false,
-                            Name = "Ürün3",
-                            SaleUnitPrice = 7000m
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            BuyUnitPrice = 2000m,
-                            CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 826, DateTimeKind.Local).AddTicks(7429),
-                            IsDeleted = false,
-                            Name = "Ürün4",
-                            SaleUnitPrice = 2800m
-                        },
-                        new
-                        {
-                            Id = 5L,
-                            BuyUnitPrice = 6000m,
-                            CreatedBy = 1L,
-                            CreatedDate = new DateTime(2021, 11, 11, 13, 35, 42, 826, DateTimeKind.Local).AddTicks(7431),
-                            IsDeleted = false,
-                            Name = "Ürün5",
-                            SaleUnitPrice = 9000m
                         });
                 });
 #pragma warning restore 612, 618

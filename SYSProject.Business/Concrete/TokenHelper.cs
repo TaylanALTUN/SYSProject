@@ -35,7 +35,7 @@ namespace SYSProject.Core.Utilities.Security.Jwt
             return new AccessToken
             {
                 Token = token,
-                Expiration=_accessTokenExpiration
+                Expiration = _accessTokenExpiration
             };
 
         }
@@ -44,15 +44,15 @@ namespace SYSProject.Core.Utilities.Security.Jwt
         {
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Sid, user.Id.ToString()));
-            claims.Add(new Claim(ClaimTypes.Name, user.UserName)); 
+            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
 
             var jwt = new JwtSecurityToken(
-                issuer:tokenOptions.Issuer,
-                audience:tokenOptions.Audience,
+                issuer: tokenOptions.Issuer,
+                audience: tokenOptions.Audience,
                 expires: _accessTokenExpiration,
-                notBefore:DateTime.Now,
-                claims:claims,
-                signingCredentials:signingCredentials
+                notBefore: DateTime.Now,
+                claims: claims,
+                signingCredentials: signingCredentials
                 );
 
             return jwt;

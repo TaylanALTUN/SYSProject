@@ -29,9 +29,9 @@ namespace SYSProject.WebAPI.Controllers
 
         [HttpPost("CreateProduct")]
         [Authorize()]
-        public IActionResult Add([FromBody]ProductDto product)
+        public IActionResult Add([FromBody] ProductDto product)
         {
-            var userId = this.User.Identity.GetUserId(); 
+            var userId = this.User.Identity.GetUserId();
             var result = _productService.Add(product, userId);
             if (result)
             {
@@ -58,7 +58,7 @@ namespace SYSProject.WebAPI.Controllers
         public IActionResult Get([FromQuery] long id)
         {
             var result = _productService.Get(id);
-            if (result!=null)
+            if (result != null)
             {
                 return Ok(new SuccessDataResult<Product>(result, Messages.ProductFound));
             }
@@ -67,10 +67,10 @@ namespace SYSProject.WebAPI.Controllers
 
         [HttpPut("UpdateProduct")]
         [Authorize()]
-        public IActionResult Update([FromQuery] long id,[FromBody] ProductDto product)
+        public IActionResult Update([FromQuery] long id, [FromBody] ProductDto product)
         {
             var userId = this.User.Identity.GetUserId();
-            var result = _productService.Update(id,product, userId);
+            var result = _productService.Update(id, product, userId);
             if (result)
             {
                 return Ok(new SuccessResult(Messages.ProductUpdated));

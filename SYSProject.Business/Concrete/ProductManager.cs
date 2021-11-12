@@ -23,10 +23,11 @@ namespace SYSProject.Business.Concrete
 
         public bool Add(ProductDto newProduct, long userId)
         {
-            return _productDal.Add(new Product() {
-                Name=newProduct.Name,
-                BuyUnitPrice=newProduct.BuyUnitPrice,
-                SaleUnitPrice=newProduct.SaleUnitPrice 
+            return _productDal.Add(new Product()
+            {
+                Name = newProduct.Name,
+                BuyUnitPrice = newProduct.BuyUnitPrice,
+                SaleUnitPrice = newProduct.SaleUnitPrice
             }, userId);
         }
 
@@ -48,7 +49,7 @@ namespace SYSProject.Business.Concrete
             product.Name = model.Name;
             product.SaleUnitPrice = model.SaleUnitPrice;
             product.BuyUnitPrice = model.BuyUnitPrice;
-          return  _productDal.Update(product, userId); 
+            return _productDal.Update(product, userId);
         }
         public bool Delete(long id, long userId)
         {

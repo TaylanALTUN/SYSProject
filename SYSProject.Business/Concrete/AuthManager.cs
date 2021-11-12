@@ -47,6 +47,6 @@ namespace SYSProject.Business.Concrete
 
             return new SuccessDataResult<User>(userToCheck, Messages.SuccessfulLogin);
         }
-  
+
     }
 }

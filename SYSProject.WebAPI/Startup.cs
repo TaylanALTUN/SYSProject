@@ -73,7 +73,7 @@ namespace SYSProject.WebAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SYSProject.WebAPI v1"));
             }
 
-         //   app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
