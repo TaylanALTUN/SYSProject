@@ -17,5 +17,4 @@
 Db Migration için: 
 
 PM Console > EntityFrameworkCore\Add-Migration Test
-
 PM Console > EntityFrameworkCore\update-database
